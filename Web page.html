@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodPlant 🌱</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e9f5ec;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      color: #2e7d32;
+      font-size: 2.5rem;
+    }
+
+    .mood-buttons button {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #c8e6c9;
+      transition: transform 0.2s;
+    }
+
+    .mood-buttons button:hover {
+      transform: scale(1.1);
+    }
+
+    .plant-container {
+      margin-top: 30px;
+    }
+
+    #plantImage {
+      width: 150px;
+      transition: all 0.5s ease;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MoodPlant 🌱</h1>
+    <p>How are you feeling today?</p>
+    
+    <div class="mood-buttons">
+      <button onclick="setMood('happy')">😊</button>
+      <button onclick="setMood('neutral')">😐</button>
+      <button onclick="setMood('sad')">😢</button>
+      <button onclick="setMood('angry')">😡</button>
+    </div>
+
+    <div class="plant-container">
+      <img id="plantImage" src="plant.jpg" alt="Plant Mood" />
+      <p id="message">Let’s grow together 🌿</p>
+    </div>
+  </div>
+
+  <script>
+    function setMood(mood) {
+      const plantImage = document.getElementById('plantImage');
+      const message = document.getElementById('message');
+
+      switch(mood) {
+        case 'happy':
+          plantImage.src = 'https://i.imgur.com/49FZlPE.png'; // Happy plant
+          message.textContent = 'Your plant is thriving! 🌼';
+          break;
+        case 'neutral':
+          plantImage.src = 'https://i.imgur.com/n7h5Btx.png'; // Neutral plant
+          message.textContent = 'Your plant is doing fine. 🌿';
+          break;
+        case 'sad':
+          plantImage.src = 'https://i.imgur.com/PRvDrmQ.png'; // Sad plant
+          message.textContent = 'Cheer up! Your plant needs some sunlight 🌧';
+          break;
+        case 'angry':
+          plantImage.src = 'https://i.imgur.com/RA0YTz9.png'; // Angry plant
+          message.textContent = 'Let’s breathe and cool down 🍃';
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
